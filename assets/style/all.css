@@ -13870,7 +13870,7 @@ img {
 .input-group input {
   display: block;
   background-color: rgba(255, 255, 255, 0.18);
-  border: 2px solid #ffd366;
+  border: 2px solid #FFD366;
   border-radius: 10px;
   padding: 0.5rem;
   color: #fff;
@@ -13898,7 +13898,7 @@ img {
 
 .input-group label {
   display: block;
-  color: #ffd366;
+  color: #FFD366;
   margin-bottom: 7px;
 }
 
