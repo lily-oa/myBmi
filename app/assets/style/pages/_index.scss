@@ -22,7 +22,7 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  background-color: #FFD366;
+  background-color: $primary;
   border: 1px solid transparent;
   font-size: 24px;
   color: #424242;
@@ -41,7 +41,7 @@
   input{
     display: block;
     background-color: rgba(255,255,255,0.18);
-    border: 2px solid #ffd366;
+    border: 2px solid $primary;
     border-radius: 10px;
     padding: 0.5rem;
     color: #fff;
@@ -51,13 +51,13 @@
   }
   label{
     display: block;
-    color: #ffd366;
+    color: $primary;
     margin-bottom: 7px;
   }
 }
 
 p{
   visibility: hidden;  //隱藏
-  color: #ff6c03;
+  color: $mediumObese;
   
 }
