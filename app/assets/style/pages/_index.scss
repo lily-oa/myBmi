@@ -10,30 +10,6 @@
   height: 117px;
 }
 
-.btn-container{
-  width: 120px;
-  height: 120px;
-}
-
-.see-result{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  background-color: $primary;
-  border: 1px solid transparent;
-  font-size: 24px;
-  color: #424242;
-  &:hover{
-    box-shadow: 0 1px 6px 3px rgba(255,196,50,0.64);
-  }
-  &:active{
-    background-color: #DEA821;
-  }
-}
-
 .input-group {
   & > div:first-child{
     margin-bottom: .5rem;
@@ -60,4 +36,46 @@ p{
   visibility: hidden;  //隱藏
   color: $mediumObese;
   margin-bottom: 0;
+  text-align: right;
+  font-size: 10.4px;
+  padding-top: 8px;
+}
+
+.visible{
+  visibility: visible;
+}
+
+.see-result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: $primary;
+  border: 1px solid transparent;
+  font-size: 24px;
+  color: #424242;
+  &:hover{
+    box-shadow: 0 1px 6px 3px rgba(255,196,50,0.64);
+  }
+  &:active{
+    background-color: #DEA821;
+  }
+}
+
+#show-result {
+  position: relative;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3{
+    font-size: 32px;
+    white-space: normal;
+  }
 }
