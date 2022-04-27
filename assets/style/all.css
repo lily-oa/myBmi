@@ -13958,6 +13958,26 @@ p {
 
 .result-msg {
   position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-left: 20px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 28px;
+}
+
+.reset-btn {
+  display: block;
+  border: 3px solid #424242;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 20px;
+  color: #424242;
+  background-color: #fff;
+  position: absolute;
+  right: -5px;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=all.css.map */
