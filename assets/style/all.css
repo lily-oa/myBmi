@@ -13830,39 +13830,6 @@ img {
   height: 117px;
 }
 
-.btn-container {
-  width: 120px;
-  height: 120px;
-}
-
-.see-result {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  background-color: #FFD366;
-  border: 1px solid transparent;
-  font-size: 24px;
-  color: #424242;
-}
-
-.see-result:hover {
-  -webkit-box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
-          box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
-}
-
-.see-result:active {
-  background-color: #DEA821;
-}
-
 .input-group > div:first-child {
   margin-bottom: .5rem;
 }
@@ -13905,6 +13872,92 @@ img {
 p {
   visibility: hidden;
   color: #ff6c03;
+  margin-bottom: 0;
+  text-align: right;
+  font-size: 10.4px;
+  padding-top: 8px;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.see-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: #FFD366;
+  border: 1px solid transparent;
+  font-size: 24px;
+  color: #424242;
+}
+
+.see-result:hover {
+  -webkit-box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
+          box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
+}
+
+.see-result:active {
+  background-color: #DEA821;
+}
+
+#show-result {
+  position: relative;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#show-result h3, #show-result .h3 {
+  font-size: 32px;
+  white-space: nowrap;
+}
+
+.result-num {
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.result-num::after {
+  position: absolute;
+  content: 'BMI';
+  font-size: 14px;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.result-msg {
+  position: absolute;
 }
 
 /*# sourceMappingURL=all.css.map */
