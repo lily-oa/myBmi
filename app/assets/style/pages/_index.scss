@@ -76,6 +76,27 @@ p{
 
   h3{
     font-size: 32px;
-    white-space: normal;
+    white-space: nowrap;  //不換行
   }
+}
+
+.result-num{
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &::after{
+    position: absolute;
+    content: 'BMI';
+    font-size: 14px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.result-msg{
+  position: absolute;
+  
 }
