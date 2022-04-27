@@ -98,5 +98,25 @@ p{
 
 .result-msg{
   position: absolute;
-  
+  top: 50%;
+  left: 100%;
+  margin-left: 20px;
+  transform: translateY(-50%);
+  font-size: 28px;
 }
+
+.reset-btn{
+  display: block;
+  border: 3px solid $dark;
+  border-radius: 50%;
+
+  padding: 4px;
+  font-size: 20px;
+  color: $dark;
+  background-color: $white;
+
+  position: absolute;
+  right: -5px;
+  bottom: 0;
+}
+
