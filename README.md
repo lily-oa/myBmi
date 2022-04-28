@@ -2,4 +2,4 @@ myBmi
 
 repo: https://github.com/lily-oa/myBmi
 
-pages: 
+pages: https://lily-oa.github.io/myBmi/
