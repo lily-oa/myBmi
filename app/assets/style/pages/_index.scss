@@ -118,5 +118,71 @@ p{
   position: absolute;
   right: -5px;
   bottom: 0;
+
+//設定不同的 "看結果"的樣式
+.result{
+  &-ideal{
+    border: 6px solid $ideal;
+    color: $ideal;
+    margin-right: -36px;
+    a{
+      background-color: $ideal;
+    }
+  }
+
+  &-thin{
+    border: 6px solid $thin;
+    color: $thin;
+    margin-right: -36px;
+    a{
+      background-color: $thin;
+    }
+  }
+
+  &-heavy{
+    border: 6px solid $heavy;
+    color: $heavy;
+    margin-right: -36px;
+    a{
+      background-color: $heavy;
+    }
+  }
+
+  &-slightlyObese{
+    border: 6px solid $slightlyObese;
+    color: $slightlyObese;
+    margin-right: -36px;
+    a{
+      background-color: $slightlyObese;
+    }
+  }
+
+  &-ideal{
+    border: 6px solid $ideal;
+    color: $ideal;
+    margin-right: -36px;
+    a{
+      background-color: $ideal;
+    }
+  }
+
+  &-mediumObese{
+    border: 6px solid $mediumObese;
+    color: $mediumObese;
+    margin-right: -36px;
+    a{
+      background-color: $mediumObese;
+    }
+  }
+
+  &-severeObese{
+    border: 6px solid $severeObese;
+    color: $severeObese;
+    margin-right: -36px;
+    a{
+      background-color: $severeObese;
+    }
+  }
 }
+
 
