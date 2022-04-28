@@ -14605,4 +14605,74 @@ p {
   bottom: 0;
 }
 
+.result-ideal {
+  border: 6px solid #86D73F;
+  color: #86D73F;
+  margin-right: -36px;
+}
+
+.result-ideal a {
+  background-color: #86D73F;
+}
+
+.result-thin {
+  border: 6px solid #31BAF9;
+  color: #31BAF9;
+  margin-right: -36px;
+}
+
+.result-thin a {
+  background-color: #31BAF9;
+}
+
+.result-heavy {
+  border: 6px solid #FF982D;
+  color: #FF982D;
+  margin-right: -36px;
+}
+
+.result-heavy a {
+  background-color: #FF982D;
+}
+
+.result-slightlyObese {
+  border: 6px solid #FF6C03;
+  color: #FF6C03;
+  margin-right: -36px;
+}
+
+.result-slightlyObese a {
+  background-color: #FF6C03;
+}
+
+.result-ideal {
+  border: 6px solid #86D73F;
+  color: #86D73F;
+  margin-right: -36px;
+}
+
+.result-ideal a {
+  background-color: #86D73F;
+}
+
+.result-mediumObese {
+  border: 6px solid #ff6c03;
+  color: #ff6c03;
+  margin-right: -36px;
+}
+
+.result-mediumObese a {
+  background-color: #ff6c03;
+}
+
+.result-severeObese {
+  border: 6px solid #FF1200;
+  color: #FF1200;
+  margin-right: -36px;
+}
+
+.result-severeObese a {
+  background-color: #FF1200;
+}
+
 /*# sourceMappingURL=all.css.map */
