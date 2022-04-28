@@ -75,7 +75,14 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          #424242 !default;
-$mediumObese:    #ff6c03 !default;
+$mediumObese:   #ff6c03 !default;
+$ideal:         #86D73F !default;
+$thin:          #31BAF9 !default;
+$heavy:         #FF982D !default;
+$slightlyObese: #FF6C03 !default;
+$mediumObese:   #FF6C03 !default;
+$severeObese:   #FF1200 !default;
+
 // scss-docs-end theme-color-variable
 
 // scss-docs-start theme-colors-map
@@ -89,6 +96,12 @@ $theme-colors: (
   "light":      $light,
   "dark":       $dark,
   "mediumObese": $mediumObese,
+  "ideal":      $ideal,
+  "thin":       $thin,
+  "heavy":      $heavy,
+  "slightlyObese": $slightlyObese,
+  "mediumObese": $mediumObese,
+  "severeObese": $severeObese,
 ) !default;
 // scss-docs-end theme-colors-map
 
