@@ -186,6 +186,11 @@ p{
   }
 }
 
+//-----------------------------------------------------第二塊
+.bg-light{
+  padding: 48px 0 74px 0;
+}
+
 .list{
   height: 300px;
   overflow: auto;
@@ -271,4 +276,15 @@ p{
   border: 0 solid #000;
   color: $white;
   padding: 8px 16px;
+  color: $white;
+  background-color: rgba(77,77,77,0.2);
+  .delete-all-text{
+    font-size: 14px;
+    color: $white;
+  }
+  &:hover{
+    background-color: #212121cc;
+    color: #efefef;
+    cursor: pointer;
+  }
 }
