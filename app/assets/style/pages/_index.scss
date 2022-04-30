@@ -189,5 +189,86 @@ p{
 .list{
   height: 300px;
   overflow: auto;
+  li{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    background-color: $white;
+    padding: 21px 0 21px 12px;
+    margin-bottom: 16px;
+    white-space: nowrap; //文字不換行
+  }
   
+}
+
+.list {
+  .none {
+    background-color: $light;
+    justify-content: center;
+  }
+}
+
+// 每個li後面清除按鈕的顏色
+.ideal{
+  border-left: 5px solid $ideal;
+  a:hover{
+    color: $ideal;
+  }
+}
+
+.thin{
+  border-left: 5px solid $thin;
+  a:hover{
+    color: $thin;
+  }
+}
+
+.heavy{
+  border-left: 5px solid $heavy;
+  a:hover{
+    color: $heavy;
+  }
+}
+
+.slightlyObese{
+  border-left: 5px solid $slightlyObese;
+  a:hover{
+    color: $slightlyObese;
+  }
+}
+
+.mediumObese{
+  border-left: 5px solid $mediumObese;
+  a:hover{
+    color: $mediumObese;
+  }
+}
+
+.severeObese{
+  border-left: 5px solid $severeObese;
+  a:hover{
+    color: $severeObese;
+  }
+}
+
+// li 裡面的刪除鈕 格式寫在js裡
+.delete-btn{
+  display: block;
+  font-size: $h5-font-size;  //20px
+  color: $dark;
+
+  &:hover{
+    color: $warning;
+    translate: all .3s ease-in-out;
+  }
+}
+
+// 清除歷史資料的圾表桶
+.clear-all-btn{
+  margin: 0 auto;
+  border-radius: 14px;
+  border: 0 solid #000;
+  color: $white;
+  padding: 8px 16px;
 }
