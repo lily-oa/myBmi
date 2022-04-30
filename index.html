@@ -22,8 +22,8 @@
     
 <div class="bg-dark">
   <div class="container">
+    <!--md以上出現-->
     <div class="d-none d-md-block">
-      <!--md以上出現-->
       <div class="row align-items-center">
         <div class="col-4">
           <div class="img ms-5">
@@ -50,10 +50,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> <!--md end-->
 
+    <!--sm以下出現-->
     <div class="d-block d-md-none">
-      <!--sm以下出現-->
       <div class="row align-items-center">
         <div class="col-6">
           <div class="input-group ms-3">
@@ -82,7 +82,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div><!--sm end-->
   </div>
 </div>
 
@@ -91,15 +91,19 @@
     <h2 
       class="
               subTitile fs-4 
-              mt-11 mb-6
+              pt-11 pb-6
               text-center
             "
     >
       BMI 紀錄
     </h2>
     <ul class="list">
-      <li class="d-none">這裡沒有資料，快來計算你的 BMI 吧!</li>
+      <li class="none">這裡沒有資料，快來計算你的 BMI 吧!</li>
     </ul>
+    <button class="clear-all-btn d-flex justify-content-center align-items-center">
+      <span class="material-icons-outlined">delete_outline</span>
+      <h3 class="delete-all-text">清除歷史記錄</h3>
+    </button>
   </div>
 </div>
     
