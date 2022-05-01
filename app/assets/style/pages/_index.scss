@@ -291,10 +291,13 @@ p{
 
 //----------------------------------------------footer
 .logoImg{
-  width: 55px;
-  height: 55px;
+  display: block;
+
   img{
     color: #000;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
   }
 }
 
