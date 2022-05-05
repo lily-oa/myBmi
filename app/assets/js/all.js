@@ -48,3 +48,12 @@ function updateData(data){
   }
   list.innerHTML = str;
 }
+
+//---------資料 : 計算BMI 資料-------//
+function BMIcalc(){
+  const weight =inputWeight.value;
+  const height =inputHeight.value / 100;
+  const bmi = Math.round((weight / Math.pow(height, 2)) * 100) / 100;
+  BMIstatus(bmi);
+
+}
