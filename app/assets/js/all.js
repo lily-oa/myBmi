@@ -53,7 +53,122 @@ function updateData(data){
 function BMIcalc(){
   const weight =inputWeight.value;
   const height =inputHeight.value / 100;
-  const bmi = Math.round((weight / Math.pow(height, 2)) * 100) / 100;
+  const bmi = Math.round((weight / Math.pow(height, 2)) * 100) / 100;  //四捨五入到第二位
+
   BMIstatus(bmi);
 
+  let bmiData = {
+    bmi: bmi,
+    weight: inputWeight.value,
+    height: inputHeight.value,
+    date: currentDate().date,
+    time: currentDate().time,
+    msg: resultMsg.textContent,
+    level: level
+  };
+
+  inputHeight.value = "";
+  inputWeight.value = "";
+
+  data.unshift(bmiData);  //陣列的最前端新增一個值
+  updateLocalStorage(data);
+
+}
+
+//---------資料 : 抓取日期-------//
+function currentDate() {
+  const now = new Date();
+  const year = new getFullYear();
+  const month = (now.getMonth() + 1 < 10 ? '0' : '') + (now.getMonth() + 1); //十位數 + 個位數(含補 0方式)
+  const date = (now.getDate() <10 ? '0' : '') + now.getDate(); //(含補 0方式)
+  const time = now.getTime();
+  let value = `${year}-${month}-${date}`;
+  return {
+    date: value,
+    time: time
+  }
+}
+
+//---------資料+畫面:判斷 BMI狀態 + 改按鈕狀態-------//
+function BMIstatus(data) {
+  const statusGroup = {
+    ideal: {
+      msg: '標準',
+      level: 'ideal',
+      color: 'result-ideal',  //已先在css寫好
+    },
+    thin: {
+      msg: '過輕',
+      level: 'thin',
+      color: 'result-thin',
+    },
+    heavy: {
+      msg: '過重',
+      level: 'heavy',
+      color: 'result-heavy',
+    },
+    slightlyObese: {
+      msg: '輕度肥胖',
+      level: 'slightlyObese',
+      color: 'result-slightlyObese',
+    },
+    mediumObese: {
+      msg: '中度肥胖',
+      level: 'mediumObese',
+      color: 'result-mediumObese',
+    },
+    severeObese: {
+      msg: '重度肥胖',
+      level: 'severeObese',
+      color: 'result-severeObese',
+    },
+  }
+};
+
+const filterStatus = function (value){
+  let color = changeBtn(statusGroup[value]);
+  resultNum.textContent = date;  // 日期寫入result-num
+  resultMsg.textContent = statusGroup[value].msg; //寫入result-msg
+  level = statusGroup[value].level;
+  let msg = statusGroup[value].msg;
+  return {
+    color,
+    level,
+    msg
+  }
+};
+
+if(data <= 18.5){
+  filterStatus('thin');
+} else if (data <= 25){
+  filterStatus('ideal');
+} else if (data <= 30){
+  filterStatus('heavy');
+} else if (data <= 35){
+  filterStatus('slightlyObese');
+} else if (data <= 40){
+  filterStatus('mediumObese');
+} else {
+  filterStatus('severeObese');
+}
+
+//---------畫面 : 按鈕轉換顏色-------//
+function changeBtn(input){
+  let color = input.color;
+  resultBtn.style.display = 'none';
+  showResult.style.display = 'block';
+  showResult.classList.add(color);  // 增加輸入值color到showResult上
+
+  return color;
+}
+
+//---------互動 + 畫面 : 點擊按鈕新增狀態 + 產生畫面-------//
+function newStatus(){
+  
+  if(inputVerify() === 'true'){
+    return;
+  };
+
+  BMIcalc();
+  updateData(data);
 }
