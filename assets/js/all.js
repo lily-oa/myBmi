@@ -1,17 +1,18 @@
 "use strict";
 
-var inputHeight = document.querySelector('.height-group input');
-var inputWeight = document.querySelector('.weight-group input');
-var verifyHeight = document.querySelector('.height-group p'); // input verify info
+var inputHeight = document.querySelector(".height-group input");
+var inputWeight = document.querySelector(".weight-group input");
+var verifyHeight = document.querySelector(".height-group p"); //input verify info
 
-var verifyWeight = document.querySelector('.weight-group p'); // input verify info
+var verifyWeight = document.querySelector(".weight-group p"); //input verify info
 
-var resultBtn = document.querySelector('.see-result');
-var showResult = document.querySelector('#show-result');
-var resultNum = document.querySelector('.result-num');
-var resultMsg = document.querySelector('.result-msg');
-var list = document.querySelector('.list');
-var clearAllBtn = document.querySelector('.clear-all-btn');
+var resultBtn = document.querySelector(".see-result");
+var showResult = document.querySelector("#show-result");
+var resultNum = document.querySelector(".result-num");
+var resultMsg = document.querySelector(".result-msg");
+var resetBtn = document.querySelector(".reset-btn");
+var list = document.querySelector(".list");
+var clearAllBtn = document.querySelector(".clear-all-btn");
 var data = JSON.parse(localStorage.getItem('BMI Record')) || [];
 var level = ''; //---------畫面:li產生列表-------//
 
@@ -21,12 +22,12 @@ function updateData(data) {
   if (data.length > 0) {
     clearAllBtn.style.display = 'flex';
     data.forEach(function (item) {
-      var content = "\n      <li class=\"".concat(item.level, "\" data-id=\"").concat(item.time, "\">\n        <h3>").concat(item.msg, "</h3>\n        <div>\n          <small>BMI</small>\n          <p>").concat(item.bmi, "</p>\n        </div>\n        <div>\n          <small>weight</small>\n          <p>").concat(item.weight, "</p>\n        </div>\n        <div>\n          <small>height</small>\n          <p>").concat(item.height, "</p>\n        </div>\n        <small>").concat(item.date, "</small>\n        <a href=\"#\" class=\"delete-btn\">\n          <i class=\"material-icons-outlined\">height_off</i>\n        </a>\n      </li>\n      ");
+      var content = "\n        <li class=\"".concat(item.level, "\" data-id=\"").concat(item.time, "\">\n          <h3>").concat(item.msg, "</h3>\n          <div>\n            <small>BMI</small>\n            <p>").concat(item.bmi, "</p>\n          </div>\n          <div>\n            <small>weight</small>\n            <p>").concat(item.weight, "</p>\n          </div>\n          <div>\n            <small>height</small>\n            <p>").concat(item.height, "</p>\n          </div>\n          <small>").concat(item.date, "</small>\n          <a href=\"#\" class=\"delete-btn\">\n            <i class=\"material-icons-outlined\"> highlight_off </i>\n          </a>\n        </li>");
       str += content;
     });
   } else {
     clearAllBtn.style.display = 'none';
-    str += "<li class=\"none\">\u9019\u88E1\u9084\u6C92\u6709\u8CC7\u6599\uFF0C\u5FEB\u4F86\u8A08\u7B97\u4F60\u7684 BMI \u5427!</li>";
+    str += "<li class=\"none\">\u9019\u88E1\u9084\u6C92\u6709\u8CC7\u6599\uFF0C\u5FEB\u4F86\u8A08\u7B97\u4F60\u7684 BMI \u5427\uFF01</li>";
   }
 
   list.innerHTML = str;
@@ -58,7 +59,7 @@ function BMIcalc() {
 
 function currentDate() {
   var now = new Date();
-  var year = new getFullYear();
+  var year = now.getFullYear();
   var month = (now.getMonth() + 1 < 10 ? '0' : '') + (now.getMonth() + 1); //十位數 + 個位數(含補 0方式)
 
   var date = (now.getDate() < 10 ? '0' : '') + now.getDate(); //(含補 0方式)
@@ -106,37 +107,33 @@ function BMIstatus(data) {
       color: 'result-severeObese'
     }
   };
-}
 
-;
-
-var filterStatus = function filterStatus(value) {
-  var color = changeBtn(statusGroup[value]);
-  resultNum.textContent = date; // 日期寫入result-num
-
-  resultMsg.textContent = statusGroup[value].msg; //寫入result-msg
-
-  level = statusGroup[value].level;
-  var msg = statusGroup[value].msg;
-  return {
-    color: color,
-    level: level,
-    msg: msg
+  var filterStatus = function filterStatus(value) {
+    var color = changeBtn(statusGroup[value]);
+    resultNum.textContent = data;
+    resultMsg.textContent = statusGroup[value].msg;
+    level = statusGroup[value].level;
+    var msg = statusGroup[value].msg;
+    return {
+      color: color,
+      level: level,
+      msg: msg
+    };
   };
-};
 
-if (data <= 18.5) {
-  filterStatus('thin');
-} else if (data <= 25) {
-  filterStatus('ideal');
-} else if (data <= 30) {
-  filterStatus('heavy');
-} else if (data <= 35) {
-  filterStatus('slightlyObese');
-} else if (data <= 40) {
-  filterStatus('mediumObese');
-} else {
-  filterStatus('severeObese');
+  if (data <= 18.5) {
+    filterStatus('thin');
+  } else if (data <= 25) {
+    filterStatus('ideal');
+  } else if (data <= 30) {
+    filterStatus('heavy');
+  } else if (data <= 35) {
+    filterStatus('slightlyObese');
+  } else if (data <= 40) {
+    filterStatus('mediumObese');
+  } else {
+    filterStatus('severeObese');
+  }
 } //---------畫面 : 按鈕轉換顏色-------//
 
 
@@ -217,8 +214,8 @@ function deleteBtn(e) {
 
   ;
   e.preventDefault();
-  var id = parseInt(e.target.closest('LI').dataset.id);
-  返回第一個LI的自訂屬性以整數呈現;
+  var id = parseInt(e.target.closest('LI').dataset.id); //返回第一個LI的自訂屬性以整數呈現
+
   var deleteData = data.findIndex(function (item) {
     item.time === id;
   });
