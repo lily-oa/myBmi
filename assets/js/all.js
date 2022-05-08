@@ -205,6 +205,25 @@ function resetAll() {
 
 
 function updateLocalStorage(data) {
-  localStorage.setItem('BMI Record', JSON.stringify(data));
+  localStorage.setItem('BMI Record', JSON.stringify(data)); //轉成字串的方式存入
+} //---------ALL: 單一刪除按鈕-------//
+
+
+function deleteBtn(e) {
+  if (!e.target.classList.contains('material-icons-outlined')) {
+    //檢查是否含有icon
+    return;
+  }
+
+  ;
+  e.preventDefault();
+  var id = parseInt(e.target.closest('LI').dataset.id);
+  返回第一個LI的自訂屬性以整數呈現;
+  var deleteData = data.findIndex(function (item) {
+    item.time === id;
+  });
+  data.splice(deleteData, 1);
+  updateLocalStorage(data);
+  updateData(data);
 }
 //# sourceMappingURL=all.js.map
