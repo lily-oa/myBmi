@@ -10262,6 +10262,10 @@ fieldset:disabled .btn {
   font-size: 0.75rem !important;
 }
 
+.fs-11 {
+  font-size: 0.75rem !important;
+}
+
 .fst-italic {
   font-style: italic !important;
 }
@@ -11612,6 +11616,9 @@ fieldset:disabled .btn {
   .fs-sm-10 {
     font-size: 0.75rem !important;
   }
+  .fs-sm-11 {
+    font-size: 0.75rem !important;
+  }
   .text-sm-start {
     text-align: left !important;
   }
@@ -12556,6 +12563,9 @@ fieldset:disabled .btn {
     font-size: 0.75rem !important;
   }
   .fs-md-10 {
+    font-size: 0.75rem !important;
+  }
+  .fs-md-11 {
     font-size: 0.75rem !important;
   }
   .text-md-start {
@@ -13504,6 +13514,9 @@ fieldset:disabled .btn {
   .fs-lg-10 {
     font-size: 0.75rem !important;
   }
+  .fs-lg-11 {
+    font-size: 0.75rem !important;
+  }
   .text-lg-start {
     text-align: left !important;
   }
@@ -14448,6 +14461,9 @@ fieldset:disabled .btn {
     font-size: 0.75rem !important;
   }
   .fs-xl-10 {
+    font-size: 0.75rem !important;
+  }
+  .fs-xl-11 {
     font-size: 0.75rem !important;
   }
   .text-xl-start {
@@ -15396,6 +15412,9 @@ fieldset:disabled .btn {
   .fs-xxl-10 {
     font-size: 0.75rem !important;
   }
+  .fs-xxl-11 {
+    font-size: 0.75rem !important;
+  }
   .text-xxl-start {
     text-align: left !important;
   }
@@ -15591,6 +15610,7 @@ img {
 }
 
 p {
+  visibility: hidden;
   color: #ff6c03;
   margin-bottom: 0;
   text-align: right;
@@ -15651,7 +15671,7 @@ p {
 }
 
 #show-result h3, #show-result .h3 {
-  font-size: 32px;
+  font-size: 36px;
   white-space: nowrap;
 }
 
@@ -15692,7 +15712,6 @@ p {
   border: 3px solid #424242;
   border-radius: 50%;
   padding: 4px;
-  font-size: 20px;
   color: #424242;
   background-color: #fff;
   position: absolute;
