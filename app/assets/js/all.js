@@ -1,55 +1,61 @@
-const inputHeight = document.querySelector('.height-group input');
-const inputWeight = document.querySelector('.weight-group input');
-const verifyHeight = document.querySelector('.height-group p'); // input verify info
-const verifyWeight = document.querySelector('.weight-group p'); // input verify info
+const inputHeight = document.querySelector(".height-group input");
+const inputWeight = document.querySelector(".weight-group input");
+const verifyHeight = document.querySelector(".height-group p"); //input verify info
+const verifyWeight = document.querySelector(".weight-group p"); //input verify info
 
-const resultBtn = document.querySelector('.see-result');
-const showResult = document.querySelector('#show-result');
-const resultNum = document.querySelector('.result-num');
-const resultMsg = document.querySelector('.result-msg');
-const list = document.querySelector('.list');
-const clearAllBtn = document.querySelector('.clear-all-btn');
+const resultBtn = document.querySelector(".see-result");
+const showResult = document.querySelector("#show-result");
+const resultNum = document.querySelector(".result-num");
+const resultMsg = document.querySelector(".result-msg");
+const resetBtn = document.querySelector(".reset-btn");
+const list = document.querySelector(".list");
+const clearAllBtn = document.querySelector(".clear-all-btn");
 
-let data = JSON.parse(localStorage.getItem('BMI Record')) || [];
-let level = '';
+let data = JSON.parse(localStorage.getItem('BMI Record')) || [] ;
+let level ='';
 
 //---------畫面:li產生列表-------//
 function updateData(data){
-  let str = '';
+  let str ='';
+
   if(data.length > 0){
     clearAllBtn.style.display = 'flex';
-    data.forEach(function(item){
+    data.forEach(item => {
       const content = `
-      <li class="${item.level}" data-id="${item.time}">
-        <h3>${item.msg}</h3>
-        <div>
-          <small>BMI</small>
-          <p>${item.bmi}</p>
-        </div>
-        <div>
-          <small>weight</small>
-          <p>${item.weight}</p>
-        </div>
-        <div>
-          <small>height</small>
-          <p>${item.height}</p>
-        </div>
-        <small>${item.date}</small>
-        <a href="#" class="delete-btn">
-          <i class="material-icons-outlined">height_off</i>
-        </a>
-      </li>
-      `;
-      str += content;
-    });
+        <li class="${item.level}" data-id="${item.time}">
+          <h3>${item.msg}</h3>
+          <div>
+            <small>BMI</small>
+            <p>${item.bmi}</p>
+          </div>
+          <div>
+            <small>weight</small>
+            <p>${item.weight}</p>
+          </div>
+          <div>
+            <small>height</small>
+            <p>${item.height}</p>
+          </div>
+          <small>${item.date}</small>
+          <a href="#" class="delete-btn">
+            <i class="material-icons-outlined"> highlight_off </i>
+          </a>
+        </li>`;
+  
+        str += content ;
+    });  
+
   }else{
     clearAllBtn.style.display = 'none';
-    str += `<li class="none">這裡還沒有資料，快來計算你的 BMI 吧!</li>`
+    str += `<li class="none">這裡還沒有資料，快來計算你的 BMI 吧！</li>`;
   }
-  list.innerHTML = str;
+
+  list.innerHTML = str ;
+
 }
 
 //---------資料 : 計算BMI 資料-------//
+
 function BMIcalc(){
   const weight =inputWeight.value;
   const height =inputHeight.value / 100;
@@ -78,7 +84,7 @@ function BMIcalc(){
 //---------資料 : 抓取日期-------//
 function currentDate() {
   const now = new Date();
-  const year = new getFullYear();
+  const year = now.getFullYear();
   const month = (now.getMonth() + 1 < 10 ? '0' : '') + (now.getMonth() + 1); //十位數 + 個位數(含補 0方式)
   const date = (now.getDate() <10 ? '0' : '') + now.getDate(); //(含補 0方式)
   const time = now.getTime();
@@ -122,34 +128,36 @@ function BMIstatus(data) {
       level: 'severeObese',
       color: 'result-severeObese',
     },
-  }
-};
+  };
 
-const filterStatus = function (value){
-  let color = changeBtn(statusGroup[value]);
-  resultNum.textContent = date;  // 日期寫入result-num
-  resultMsg.textContent = statusGroup[value].msg; //寫入result-msg
-  level = statusGroup[value].level;
-  let msg = statusGroup[value].msg;
-  return {
-    color,
-    level,
-    msg
-  }
-};
 
-if(data <= 18.5){
-  filterStatus('thin');
-} else if (data <= 25){
-  filterStatus('ideal');
-} else if (data <= 30){
-  filterStatus('heavy');
-} else if (data <= 35){
-  filterStatus('slightlyObese');
-} else if (data <= 40){
-  filterStatus('mediumObese');
-} else {
-  filterStatus('severeObese');
+  const filterStatus = function (value) {
+    let color = changeBtn(statusGroup[value]);
+    resultNum.textContent = data;
+    resultMsg.textContent = statusGroup[value].msg;
+    level = statusGroup[value].level;
+    let msg = statusGroup[value].msg;
+    return {
+      color,
+      level,
+      msg
+    }
+  };
+
+  if (data <= 18.5) {
+    filterStatus('thin');
+  } else if (data <= 25) {
+    filterStatus('ideal');
+  } else if (data <= 30) {
+    filterStatus('heavy');
+  } else if (data <= 35) {
+    filterStatus('slightlyObese');
+  } else if (data <= 40) {
+    filterStatus('mediumObese');
+  } else {
+    filterStatus('severeObese');
+  }
+
 }
 
 //---------畫面 : 按鈕轉換顏色-------//
@@ -217,18 +225,20 @@ function updateLocalStorage(data){
 }
 
 //---------ALL: 單一刪除按鈕-------//
+
 function deleteBtn(e){
   if(!e.target.classList.contains('material-icons-outlined')){  //檢查是否含有icon
     return;
   };
+
   e.preventDefault();
-  const id = parseInt(e.target.closest('LI').dataset.id);返回第一個LI的自訂屬性以整數呈現
+  const id = parseInt(e.target.closest('LI').dataset.id); //返回第一個LI的自訂屬性以整數呈現
 
   let deleteData = data.findIndex(function(item){
     item.time === id;
   });
 
-  data.splice(deleteData, 1);
+  data.splice(deleteData,1);
 
   updateLocalStorage(data);
   updateData(data);
