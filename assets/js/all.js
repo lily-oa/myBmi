@@ -225,5 +225,50 @@ function deleteBtn(e) {
   data.splice(deleteData, 1);
   updateLocalStorage(data);
   updateData(data);
+} //---------ALL: 全部刪除按鈕-------//
+
+
+function deleteAllData(e) {
+  e.preventDefault();
+
+  if (e.target.closest('.clear-all-btn').nodeName !== 'BUTTON') {
+    return;
+  }
+
+  var total = data.length;
+  data.splice(0, total);
+  updateLocalStorage(data);
+  updateData(data);
+  resetAll();
+} //---------keyup 監聽-------//
+
+
+function inputByKey(e) {
+  if (e.key === 'Enter') {
+    if (resultBtn.style.display === 'block') {
+      newStatus();
+    } else {
+      resetAll();
+    }
+
+    ;
+  } else {
+    return;
+  }
+
+  ;
+} // 初始值
+
+
+function init() {
+  updateData(data);
+  inputHeight.addEventListener('keyup', inputByKey, false);
+  inputWeight.addEventListener('keyup', inputByKey, false);
+  resultBtn.addEventListener('click', newStatus, false);
+  resetBtn.addEventListener('click', resetAll, false);
+  list.addEventListener('click', deleteBtn, false);
+  clearAllBtn.addEventListener('click', deleteAllData, false);
 }
+
+init();
 //# sourceMappingURL=all.js.map
