@@ -22,7 +22,7 @@ function updateData(data) {
   if (data.length > 0) {
     clearAllBtn.style.display = 'flex';
     data.forEach(function (item) {
-      var content = "\n        <li class=\"".concat(item.level, "\" data-id=\"").concat(item.time, "\">\n          <h3>").concat(item.msg, "</h3>\n          <div>\n            <small class='fs-9'>BMI</small>\n            <span>").concat(item.bmi, "</span>\n          </div>\n          <div>\n            <small class='fs-9'>weight</small>\n            <span>").concat(item.weight, "</span>\n          </div>\n          <div>\n            <small class='fs-9'>height</small>\n            <span>").concat(item.height, "</span>\n          </div>\n          <small>").concat(item.date, "</small>\n          <a href=\"#\" class=\"delete-btn pe-2\">\n            <i class=\"material-icons-outlined\"> highlight_off </i>\n          </a>\n        </li>");
+      var content = "\n        <li class=\"".concat(item.level, "\" data-id=\"").concat(item.time, "\">\n          <h3>").concat(item.msg, "</h3>\n          <div>\n            <small class='fs-md-9'>BMI</small>\n            <span>").concat(item.bmi, "</span>\n          </div>\n          <div>\n            <small class='fs-md-9'>weight</small>\n            <span>").concat(item.weight, "</span>\n          </div>\n          <div>\n            <small class='fs-md-9'>height</small>\n            <span>").concat(item.height, "</span>\n          </div>\n          <small class=\"fs-sm-12\">").concat(item.date, "</small>\n          <a href=\"#\" class=\"delete-btn pe-2\">\n            <i class=\"material-icons-outlined\"> highlight_off </i>\n          </a>\n        </li>");
       str += content;
     });
   } else {

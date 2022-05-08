@@ -10259,11 +10259,19 @@ fieldset:disabled .btn {
 }
 
 .fs-10 {
-  font-size: 0.75rem !important;
+  font-size: 0.875rem !important;
 }
 
 .fs-11 {
-  font-size: 0.75rem !important;
+  font-size: 2.25rem !important;
+}
+
+.fs-12 {
+  font-size: 0.625rem !important;
+}
+
+.fs-13 {
+  font-size: 0.5rem !important;
 }
 
 .fst-italic {
@@ -11614,10 +11622,16 @@ fieldset:disabled .btn {
     font-size: 0.75rem !important;
   }
   .fs-sm-10 {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important;
   }
   .fs-sm-11 {
-    font-size: 0.75rem !important;
+    font-size: 2.25rem !important;
+  }
+  .fs-sm-12 {
+    font-size: 0.625rem !important;
+  }
+  .fs-sm-13 {
+    font-size: 0.5rem !important;
   }
   .text-sm-start {
     text-align: left !important;
@@ -12563,10 +12577,16 @@ fieldset:disabled .btn {
     font-size: 0.75rem !important;
   }
   .fs-md-10 {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important;
   }
   .fs-md-11 {
-    font-size: 0.75rem !important;
+    font-size: 2.25rem !important;
+  }
+  .fs-md-12 {
+    font-size: 0.625rem !important;
+  }
+  .fs-md-13 {
+    font-size: 0.5rem !important;
   }
   .text-md-start {
     text-align: left !important;
@@ -13512,10 +13532,16 @@ fieldset:disabled .btn {
     font-size: 0.75rem !important;
   }
   .fs-lg-10 {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important;
   }
   .fs-lg-11 {
-    font-size: 0.75rem !important;
+    font-size: 2.25rem !important;
+  }
+  .fs-lg-12 {
+    font-size: 0.625rem !important;
+  }
+  .fs-lg-13 {
+    font-size: 0.5rem !important;
   }
   .text-lg-start {
     text-align: left !important;
@@ -14461,10 +14487,16 @@ fieldset:disabled .btn {
     font-size: 0.75rem !important;
   }
   .fs-xl-10 {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important;
   }
   .fs-xl-11 {
-    font-size: 0.75rem !important;
+    font-size: 2.25rem !important;
+  }
+  .fs-xl-12 {
+    font-size: 0.625rem !important;
+  }
+  .fs-xl-13 {
+    font-size: 0.5rem !important;
   }
   .text-xl-start {
     text-align: left !important;
@@ -15410,10 +15442,16 @@ fieldset:disabled .btn {
     font-size: 0.75rem !important;
   }
   .fs-xxl-10 {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important;
   }
   .fs-xxl-11 {
-    font-size: 0.75rem !important;
+    font-size: 2.25rem !important;
+  }
+  .fs-xxl-12 {
+    font-size: 0.625rem !important;
+  }
+  .fs-xxl-13 {
+    font-size: 0.5rem !important;
   }
   .text-xxl-start {
     text-align: left !important;
