@@ -172,3 +172,46 @@ function newStatus(){
   BMIcalc();
   updateData(data);
 }
+
+//---------互動 + 畫面 : 表單驗證-------//
+function inputVerify(){
+  if(inputHeight.value.trim() == '' || inputWeight.value.trim() == ''){
+    let alertMsg;
+
+    if(inputHeight.value.trim() == ''){
+      verifyHeight.textContent = '*請在此輸入身高 XXX cm';
+      verifyHeight.classList.add('visible');
+      inputHeight.classList.add('warning');
+      alertMsg = 'true';
+    };
+    if(inputWeight.value.trim() == ''){
+      verifyWeight.textContent = '*請在此輸入體重 XX kg';
+      verifyWeight.classList.add('visible');
+      inputWeight.classList.add('warning');
+      alertMsg = 'true';
+    };
+
+    return alertMsg; 
+  };
+
+  verifyHeight.classList.remove('visible');
+  verifyWeight.classList.remove('visible');
+  inputHeight.classList.remove('warning');
+  inputWeight.classList.remove('warning');
+}
+
+//---------互動 + 畫面 : 清空表單、按鈕 or 繼續計算-------//
+function resetAll(){
+  if(inputVerify()==='true'){
+    resultBtn.style.display = 'block';
+    showResult.style.display = 'none';
+    showResult.setAttribute('class', '');
+  }else{
+    newStatus();
+  }
+}
+
+//---------資料:更新 localStorage -------//
+function updateLocalStorage(data){
+  localStorage.setItem('BMI Record', JSON.stringify(data));
+}
