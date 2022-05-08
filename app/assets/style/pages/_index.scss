@@ -33,7 +33,7 @@
 }
 
 p{
-  visibility: hidden;  //隱藏
+  // visibility: hidden;  //隱藏
   color: $mediumObese;
   margin-bottom: 0;
   text-align: right;
@@ -42,7 +42,7 @@ p{
 }
 
 .visible{
-  visibility: visible;
+  visibility: visible;  //可見的
 }
 
 .see-result{
@@ -196,7 +196,7 @@ p{
   overflow: auto;
   li{
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
 
     background-color: $white;
