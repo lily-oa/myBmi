@@ -25,18 +25,18 @@ function updateData(data){
         <li class="${item.level}" data-id="${item.time}">
           <h3>${item.msg}</h3>
           <div>
-            <small class='fs-md-9'>BMI</small>
+            <small class='fs-9'>BMI</small>
             <span>${item.bmi}</span>
           </div>
           <div>
-            <small class='fs-md-9'>weight</small>
+            <small class='fs-9'>weight</small>
             <span>${item.weight}</span>
           </div>
           <div>
-            <small class='fs-md-9'>height</small>
+            <small class='fs-9'>height</small>
             <span>${item.height}</span>
           </div>
-          <small class="fs-sm-12">${item.date}</small>
+          <small>${item.date}</small>
           <a href="#" class="delete-btn pe-2">
             <i class="material-icons-outlined"> highlight_off </i>
           </a>
