@@ -22,7 +22,7 @@ function updateData(data) {
   if (data.length > 0) {
     clearAllBtn.style.display = 'flex';
     data.forEach(function (item) {
-      var content = "\n        <li class=\"".concat(item.level, " d-block d-md-none ps-0 ms-0\" data-id=\"").concat(item.time, "\">\n          <div class=\"row d-flex flex-column justify-content-between align-items-center\">\n            <div class=\"col-9 d-flex flex-row\">\n                <h3 class=\"ps-1\">").concat(item.msg, "</h3>\n                <div class=\"ps-1\">\n                  <small class='fs-9'>BMI</small>\n                  <span>").concat(item.bmi, "</span>\n                </div>\n                <div class=\"ps-1\">\n                  <small class='fs-9'>weight</small>\n                  <span>").concat(item.weight, "</span>\n                </div>\n                <div class='ps-1'>\n                  <small class='fs-9'>height</small>\n                  <span>").concat(item.height, "</span>\n                </div>\n            </div>\n\n            <div class=\"col-3 d-flex flex-row align-items-center\">\n              <small class=\"d-flex flex-sm-wrap pe-1\">").concat(item.date, "</small>\n              <a href=\"#\" class=\"delete-btn pe-2\">\n                <i class=\"material-icons-outlined\"> highlight_off </i>\n              </a>\n            </div>\n          </div>\n        </li>\n        <li class=\"").concat(item.level, " d-none d-md-block d-flex\" data-id=\"").concat(item.time, "\">\n        \n          <h3>").concat(item.msg, "</h3>\n          <div>\n            <small class='fs-9'>BMI</small>\n            <span>").concat(item.bmi, "</span>\n          </div>\n          <div>\n            <small class='fs-9'>weight</small>\n            <span>").concat(item.weight, "</span>\n          </div>\n          <div>\n            <small class='fs-9'>height</small>\n            <span>").concat(item.height, "</span>\n          </div>\n          <small>").concat(item.date, "</small>\n          <a href=\"#\" class=\"delete-btn pe-2\">\n            <i class=\"material-icons-outlined\"> highlight_off </i>\n          </a>\n        \n        </li>\n        ");
+      var content = "\n        <li class=\"".concat(item.level, " d-block d-md-none ps-0 ms-0\" data-id=\"").concat(item.time, "\">\n          <div class=\"row d-flex flex-column justify-content-between align-items-center\">\n            <div class=\"col-9 d-flex flex-row\">\n                <h3 class=\"ps-1\">").concat(item.msg, "</h3>\n                <div class=\"ps-1\">\n                  <small class='fs-9'>BMI</small>\n                  <span>").concat(item.bmi, "</span>\n                </div>\n                <div class=\"ps-1\">\n                  <small class='fs-9'>weight</small>\n                  <span>").concat(item.weight, "</span>\n                </div>\n                <div class='ps-1'>\n                  <small class='fs-9'>height</small>\n                  <span>").concat(item.height, "</span>\n                </div>\n            </div>\n            <div class=\"col-3 d-flex flex-row align-items-center\">\n              <small class=\"d-flex flex-sm-wrap pe-1\">").concat(item.date, "</small>\n              <a href=\"#\" class=\"delete-btn pe-2\">\n                <i class=\"material-icons-outlined\"> highlight_off </i>\n              </a>\n            </div>\n          </div>\n        </li>\n\n        <li class=\"").concat(item.level, " d-none d-md-block\" data-id=\"").concat(item.time, "\">\n          <div class=\"d-flex flex-md-row align-items-md-center justify-content-between\">\n              <h3>").concat(item.msg, "</h3>\n              <div>\n                <small class='fs-9'>BMI</small>\n                <span>").concat(item.bmi, "</span>\n              </div>\n              <div>\n                <small class='fs-9'>weight</small>\n                <span>").concat(item.weight, "</span>\n              </div>\n              <div>\n                <small class='fs-9'>height</small>\n                <span>").concat(item.height, "</span>\n              </div>\n              <small>").concat(item.date, "</small>\n              <a href=\"#\" class=\"delete-btn pe-2\">\n                <i class=\"material-icons-outlined\"> highlight_off </i>\n              </a>\n            </div>\n        </li>\n        ");
       str += content;
     });
   } else {
@@ -76,18 +76,18 @@ function currentDate() {
 function BMIstatus(data) {
   var statusGroup = {
     ideal: {
-      msg: '標準',
+      msg: '標準體重',
       level: 'ideal',
       color: 'result-ideal' //已先在css寫好
 
     },
     thin: {
-      msg: '過輕',
+      msg: '體重過輕',
       level: 'thin',
       color: 'result-thin'
     },
     heavy: {
-      msg: '過重',
+      msg: '體重過重',
       level: 'heavy',
       color: 'result-heavy'
     },
