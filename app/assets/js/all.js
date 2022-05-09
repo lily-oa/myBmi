@@ -39,7 +39,6 @@ function updateData(data){
                   <span>${item.height}</span>
                 </div>
             </div>
-
             <div class="col-3 d-flex flex-row align-items-center">
               <small class="d-flex flex-sm-wrap pe-1">${item.date}</small>
               <a href="#" class="delete-btn pe-2">
@@ -48,26 +47,27 @@ function updateData(data){
             </div>
           </div>
         </li>
-        <li class="${item.level} d-none d-md-block d-flex" data-id="${item.time}">
-        
-          <h3>${item.msg}</h3>
-          <div>
-            <small class='fs-9'>BMI</small>
-            <span>${item.bmi}</span>
-          </div>
-          <div>
-            <small class='fs-9'>weight</small>
-            <span>${item.weight}</span>
-          </div>
-          <div>
-            <small class='fs-9'>height</small>
-            <span>${item.height}</span>
-          </div>
-          <small>${item.date}</small>
-          <a href="#" class="delete-btn pe-2">
-            <i class="material-icons-outlined"> highlight_off </i>
-          </a>
-        
+
+        <li class="${item.level} d-none d-md-block" data-id="${item.time}">
+          <div class="d-flex flex-md-row align-items-md-center justify-content-between">
+              <h3>${item.msg}</h3>
+              <div>
+                <small class='fs-9'>BMI</small>
+                <span>${item.bmi}</span>
+              </div>
+              <div>
+                <small class='fs-9'>weight</small>
+                <span>${item.weight}</span>
+              </div>
+              <div>
+                <small class='fs-9'>height</small>
+                <span>${item.height}</span>
+              </div>
+              <small>${item.date}</small>
+              <a href="#" class="delete-btn pe-2">
+                <i class="material-icons-outlined"> highlight_off </i>
+              </a>
+            </div>
         </li>
         `
         ;
@@ -128,17 +128,17 @@ function currentDate() {
 function BMIstatus(data) {
   const statusGroup = {
     ideal: {
-      msg: '標準',
+      msg: '標準體重',
       level: 'ideal',
       color: 'result-ideal',  //已先在css寫好
     },
     thin: {
-      msg: '過輕',
+      msg: '體重過輕',
       level: 'thin',
       color: 'result-thin',
     },
     heavy: {
-      msg: '過重',
+      msg: '體重過重',
       level: 'heavy',
       color: 'result-heavy',
     },
