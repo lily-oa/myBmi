@@ -22,7 +22,34 @@ function updateData(data){
     clearAllBtn.style.display = 'flex';
     data.forEach(item => {
       const content = `
-        <li class="${item.level}" data-id="${item.time}">
+        <li class="${item.level} d-block d-md-none ps-0 ms-0" data-id="${item.time}">
+          <div class="row d-flex flex-column justify-content-between align-items-center">
+            <div class="col-9 d-flex flex-row">
+                <h3 class="ps-1">${item.msg}</h3>
+                <div class="ps-1">
+                  <small class='fs-9'>BMI</small>
+                  <span>${item.bmi}</span>
+                </div>
+                <div class="ps-1">
+                  <small class='fs-9'>weight</small>
+                  <span>${item.weight}</span>
+                </div>
+                <div class='ps-1'>
+                  <small class='fs-9'>height</small>
+                  <span>${item.height}</span>
+                </div>
+            </div>
+
+            <div class="col-3 d-flex flex-row align-items-center">
+              <small class="d-flex flex-sm-wrap pe-1">${item.date}</small>
+              <a href="#" class="delete-btn pe-2">
+                <i class="material-icons-outlined"> highlight_off </i>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="${item.level} d-none d-md-block d-flex" data-id="${item.time}">
+        
           <h3>${item.msg}</h3>
           <div>
             <small class='fs-9'>BMI</small>
@@ -40,8 +67,10 @@ function updateData(data){
           <a href="#" class="delete-btn pe-2">
             <i class="material-icons-outlined"> highlight_off </i>
           </a>
-        </li>`;
-  
+        
+        </li>
+        `
+        ;
         str += content ;
     });  
 
