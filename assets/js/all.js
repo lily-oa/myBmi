@@ -7,7 +7,7 @@ var verifyHeight = document.querySelector(".height-group p"); //input verify inf
 var verifyWeight = document.querySelector(".weight-group p"); //input verify info
 
 var resultBtn = document.querySelector("see-result");
-var showResult = document.querySelector("#show-result");
+var showResult = document.querySelector(".show-result");
 var resultNum = document.querySelector(".result-num");
 var resultMsg = document.querySelector(".result-msg");
 var resetBtn = document.querySelector(".reset-btn");
