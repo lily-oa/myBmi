@@ -7,74 +7,39 @@ current: index
 
 <div class="bg-dark">
   <div class="container">
-    <!--md以上出現-->
-    <div class="d-none d-md-block">
-      <div class="row align-items-center">
-        <div class="col-4">
-          <div class="img ms-5">
-            <img src="./assets/images/BMI.png" alt="logo">
-          </div>
+    <div class="row align-items-center">
+      <div class="col-md-4 d-none d-md-block">
+        <div class="img ms-5">
+          <img src="./assets/images/BMI.png" alt="logo">
         </div>
-        <div class="col-4">
-          <div class="input-group d-flex flex-column">
-            <div class="height-group d-flex flex-column">
-              <label for="height" class="fs-7 ">身高 cm</label>
-              <input type="number" placeholder="請輸入身高">
-              <p>***此欄位**</p>
-            </div>
-            <div class="weight-group d-flex flex-column">
-              <label for="weight" class="fs-7">體重 kg</label>
-              <input type="number" placeholder="請輸入體重">
-              <p>**此欄位**</p>
-            </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="input-group d-flex flex-column">
+          <div class="height-group d-flex flex-column">
+            <label for="height" class="fs-7 ">身高 cm</label>
+            <input type="number" placeholder="請輸入身高">
+            <p>***此欄位**</p>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="btn-container ps-5">
-            <button class="see-result" style="display: block;">看結果</button>
-            <div class="show-result" style="display: none">
-              <h3 class="result-num"></h3>
-              <h3 class="result-msg"></h3>
-              <a href="#" class="reset-btn">
-                <i class="material-icons">autorenew</i>
-              </a>
-            </div>
+          <div class="weight-group d-flex flex-column">
+            <label for="weight" class="fs-7">體重 kg</label>
+            <input type="number" placeholder="請輸入體重">
+            <p>**此欄位**</p>
           </div>
         </div>
       </div>
-    </div> <!--md end-->
-
-    <!--sm以下出現-->
-    <div class="d-block d-md-none">
-      <div class="row align-items-center">
-        <div class="col-6">
-          <div class="input-group ms-3">
-            <div class="height-group d-flex flex-column">
-              <label for="height">身高 cm</label>
-              <input type="number" placeholder="請輸入身高">
-              <p>***此欄位**</p>
-            </div>
-            <div class="weight-group d-flex flex-column">
-              <label for="weight">體重 kg</label>
-              <input type="number" placeholder="請輸入體重">
-              <p>**此欄位**</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="btn-container ps-7">
-            <button class="see-result" style="display: block;">看結果</button>
-            <div class="show-result" style="display: none">
-              <h3 class="result-num"></h3>
-              <h3 class="result-msg"></h3>
-              <a href="#" class="reset-btn">
-                <i class="material-icons">autorenew</i>
-              </a>
-            </div>
+      <div class="col-6 col-md-4">
+        <div class="btn-container ps-5">
+          <button class="see-result" style="display: block;">看結果</button>
+          <div id="show-result" style="display: none">
+            <h3 class="result-num"></h3>
+            <h3 class="result-msg"></h3>
+            <a href="#" class="reset-btn">
+              <i class="material-icons">autorenew</i>
+            </a>
           </div>
         </div>
       </div>
-    </div><!--sm end-->
+    </div>
   </div>
 </div>
 
