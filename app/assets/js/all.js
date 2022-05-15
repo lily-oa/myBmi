@@ -4,7 +4,7 @@ const inputWeight = document.querySelector(".weight-group input");
 const verifyHeight = document.querySelector(".height-group p"); //input verify info
 const verifyWeight = document.querySelector(".weight-group p"); //input verify info
 
-const resultBtn = document.querySelector("see-result");
+const resultBtn = document.querySelector(".see-result");
 const showResult = document.getElementById("show-result");
 const resultNum = document.querySelector(".result-num");
 const resultMsg = document.querySelector(".result-msg");
