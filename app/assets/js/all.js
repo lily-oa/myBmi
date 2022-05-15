@@ -5,7 +5,7 @@ const verifyHeight = document.querySelector(".height-group p"); //input verify i
 const verifyWeight = document.querySelector(".weight-group p"); //input verify info
 
 const resultBtn = document.querySelector(".see-result");
-const showResult = document.getElementById("show-result");
+const showResult = document.querySelector("#show-result");
 const resultNum = document.querySelector(".result-num");
 const resultMsg = document.querySelector(".result-msg");
 const resetBtn = document.querySelector(".reset-btn");
@@ -257,16 +257,14 @@ function updateLocalStorage(data){
 //---------ALL: 單一刪除按鈕-------//
 
 function deleteBtn(e){
-  if(!e.target.classList.contains('material-icons-outlined')){  //檢查是否含有icon
+  if(!e.target.classList.contains("material-icons-outlined")){  //檢查是否含有icon
     return;
   };
 
   e.preventDefault();
-  const id = parseInt(e.target.closest('LI').dataset.id); //返回第一個LI的自訂屬性以整數呈現
+  const id = parseInt(e.target.closest("LI").dataset.id); //返回第一個LI的自訂屬性以整數呈現
 
-  let deleteData = data.findIndex(function(item){
-    item.time === id;
-  });
+  let deleteData = data.findIndex(item => item.time === id);
 
   data.splice(deleteData,1);
 
