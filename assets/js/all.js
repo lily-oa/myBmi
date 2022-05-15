@@ -6,7 +6,7 @@ var verifyHeight = document.querySelector(".height-group p"); //input verify inf
 
 var verifyWeight = document.querySelector(".weight-group p"); //input verify info
 
-var resultBtn = document.querySelector("see-result");
+var resultBtn = document.querySelector(".see-result");
 var showResult = document.querySelector("#show-result");
 var resultNum = document.querySelector(".result-num");
 var resultMsg = document.querySelector(".result-msg");
@@ -207,17 +207,17 @@ function updateLocalStorage(data) {
 
 
 function deleteBtn(e) {
-  if (!e.target.classList.contains('material-icons-outlined')) {
+  if (!e.target.classList.contains("material-icons-outlined")) {
     //檢查是否含有icon
     return;
   }
 
   ;
   e.preventDefault();
-  var id = parseInt(e.target.closest('LI').dataset.id); //返回第一個LI的自訂屬性以整數呈現
+  var id = parseInt(e.target.closest("LI").dataset.id); //返回第一個LI的自訂屬性以整數呈現
 
   var deleteData = data.findIndex(function (item) {
-    item.time === id;
+    return item.time === id;
   });
   data.splice(deleteData, 1);
   updateLocalStorage(data);
