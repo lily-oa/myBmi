@@ -5,7 +5,7 @@ const verifyHeight = document.querySelector(".height-group p"); //input verify i
 const verifyWeight = document.querySelector(".weight-group p"); //input verify info
 
 const resultBtn = document.querySelector("see-result");
-const showResult = document.querySelector("#show-result");
+const showResult = document.getElementById("show-result");
 const resultNum = document.querySelector(".result-num");
 const resultMsg = document.querySelector(".result-msg");
 const resetBtn = document.querySelector(".reset-btn");
@@ -310,6 +310,8 @@ function init(){
 
   resultBtn.addEventListener('click', newStatus, false);
   resetBtn.addEventListener('click', resetAll, false);
+
+  
   list.addEventListener('click', deleteBtn, false);
   clearAllBtn.addEventListener('click', deleteAllData, false);
 }
