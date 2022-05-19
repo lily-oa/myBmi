@@ -193,10 +193,9 @@ function BMIstatus(data) {
 //---------畫面 : 按鈕轉換顏色-------//
 function changeBtn(input){
   let color = input.color;
-  resultBtn.style.display = 'none';
   showResult.style.display = 'block';
+  resultBtn.style.display = 'none';
   showResult.classList.add(color);  // 增加輸入值color到showResult上
-
   return color;
 }
 
