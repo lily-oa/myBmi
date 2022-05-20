@@ -139,10 +139,12 @@ function BMIstatus(data) {
 
 function changeBtn(input) {
   var color = input.color;
-  showResult.style.display = 'block';
-  resultBtn.style.display = 'none'; // showResult.classList.remove() 
+  showResult.style.display = 'block'; //顯示
+
+  resultBtn.style.display = 'none'; //隱藏
 
   showResult.classList.add(color); // 增加輸入值color到showResult上
+  //showResult.classList.remove(showResult.classList); 
 
   return color;
 } //---------互動 + 畫面 : 點擊按鈕新增狀態 + 產生畫面-------//
