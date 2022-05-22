@@ -195,9 +195,9 @@ function changeBtn(input){
   let color = input.color;
   showResult.style.display = 'block'; //顯示
   resultBtn.style.display = 'none';   //隱藏
-  
+  showResult.classList.remove(color); 
   showResult.classList.add(color);  // 增加輸入值color到showResult上
-  //showResult.classList.remove(showResult.classList); 
+
   return color;
 }
 
