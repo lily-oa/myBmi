@@ -143,7 +143,8 @@ function changeBtn(input) {
 
   resultBtn.style.display = 'none'; //隱藏
 
-  showResult.classList.remove(color);
+  showResult.className = ''; //清空之前的按鈕顏色style
+
   showResult.classList.add(color); // 增加輸入值color到showResult上
 
   return color;
