@@ -193,7 +193,7 @@ p{
 
 .list{
   height: 300px;
-  overflow: auto;
+  overflow: auto;        //預設會自動使用捲軸
   li{
     display: flex;
     align-items: center;
