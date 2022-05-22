@@ -145,7 +145,7 @@ function changeBtn(input) {
 
   showResult.className = ''; //將之前的按鈕顏色style設為空
 
-  showResult.classList.add(color); // 增加輸入值color到showResult上
+  showResult.classList.add(color); //再重新賦了新的按鈕顏色
 
   return color;
 } //---------互動 + 畫面 : 點擊按鈕新增狀態 + 產生畫面-------//
