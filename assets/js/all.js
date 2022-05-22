@@ -143,8 +143,8 @@ function changeBtn(input) {
 
   resultBtn.style.display = 'none'; //隱藏
 
+  showResult.classList.remove(color);
   showResult.classList.add(color); // 增加輸入值color到showResult上
-  //showResult.classList.remove(showResult.classList); 
 
   return color;
 } //---------互動 + 畫面 : 點擊按鈕新增狀態 + 產生畫面-------//
