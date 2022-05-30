@@ -195,7 +195,7 @@ function changeBtn(input){
   let color = input.color;
   showResult.style.display = 'block'; //顯示
   resultBtn.style.display = 'none';   //隱藏
-  showResult.className = '';          //將之前的按鈕顏色style設為空
+  showResult.className = '';          //將之前的按鈕顏色style設為空(之前的除錯處)
   showResult.classList.add(color);    //再重新賦了新的按鈕顏色
 
   return color;
