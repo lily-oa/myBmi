@@ -121,7 +121,7 @@ p{
 }
 
 //----------------------------------------------------------------------
-//設定不同的 "看結果"的樣式
+//設定不同的 "看結果 "的樣式
 .result{
   &-ideal{
     border: 6px solid $ideal;
@@ -201,7 +201,7 @@ p{
     justify-content: space-between;
 
     background-color: $white;
-    padding: 21px 0 21px 0;
+    padding: 21px 0;
     margin-bottom: 16px;
     white-space: nowrap; //文字不換行
   }
