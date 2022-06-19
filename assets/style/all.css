@@ -15847,7 +15847,7 @@ p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #fff;
-  padding: 21px 0 21px 0;
+  padding: 21px 0;
   margin-bottom: 16px;
   white-space: nowrap;
 }
