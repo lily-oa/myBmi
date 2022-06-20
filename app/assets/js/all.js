@@ -80,12 +80,12 @@ function updateData(data){
 
 }
 
-//---------資料 : 計算BMI 資料-------//
-
+//== 資料：計算BMI 資料 ==//
 function BMIcalc(){
-  const weight =inputWeight.value;
-  const height =inputHeight.value / 100;
-  const bmi = Math.round((weight / Math.pow(height, 2)) * 100) / 100;  //四捨五入到第二位
+  const weight = inputWeight.value ; 
+  const height = inputHeight.value / 100;
+
+  const bmi = Math.round((weight / Math.pow(height, 2)) * 100) / 100 ;
 
   BMIstatus(bmi);
 
@@ -102,64 +102,64 @@ function BMIcalc(){
   inputHeight.value = "";
   inputWeight.value = "";
 
-  data.unshift(bmiData);  //陣列的最前端新增一個值
+  data.unshift(bmiData);
   updateLocalStorage(data);
 
 }
 
-//---------資料 : 抓取日期-------//
-function currentDate() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = (now.getMonth() + 1 < 10 ? '0' : '') + (now.getMonth() + 1); //十位數 + 個位數(含補 0方式)
-  const date = (now.getDate() <10 ? '0' : '') + now.getDate(); //(含補 0方式)
+//== 資料：抓取日期 ==//
+function currentDate(){
+  const now = new Date() ;
+  const year = now.getFullYear() ;
+  const month = (now.getMonth() + 1 < 10 ? '0' : '') + (now.getMonth() + 1) ;  //十位數＋個位數
+  const date = (now.getDate() < 10 ? '0' : '') + now.getDate() ;
   const time = now.getTime();
   let value = `${year}-${month}-${date}`;
   return {
     date: value,
     time: time
   }
+
 }
 
-//---------資料+畫面:判斷 BMI狀態 + 改按鈕狀態-------//
-function BMIstatus(data) {
+//== 資料＋畫面：判斷BMI 狀態 + 改按鈕狀態 ==//
+function BMIstatus(data){
   const statusGroup = {
     ideal: {
-      msg: '標準體重',
-      level: 'ideal',
-      color: 'result-ideal',  //已先在css寫好
+      msg:'標準',
+      level:'ideal',
+      color: 'result-ideal',
     },
     thin: {
-      msg: '體重過輕',
-      level: 'thin',
+      msg:'過輕',
+      level:'thin',
       color: 'result-thin',
     },
     heavy: {
-      msg: '體重過重',
-      level: 'heavy',
+      msg:'過重',
+      level:'heavy',
       color: 'result-heavy',
     },
     slightlyObese: {
-      msg: '輕度肥胖',
-      level: 'slightlyObese',
+      msg:'輕度肥胖',
+      level:'slightlyObese',
       color: 'result-slightlyObese',
     },
     mediumObese: {
-      msg: '中度肥胖',
-      level: 'mediumObese',
+      msg:'中度肥胖',
+      level:'mediumObese',
       color: 'result-mediumObese',
     },
     severeObese: {
-      msg: '重度肥胖',
-      level: 'severeObese',
-      color: 'result-severeObese',
-    },
+      msg:'重度肥胖',
+      level:'severeObese',
+      color: 'result-severeObese'
+    }
   };
 
-
-  const filterStatus = function (value) {
+  const filterStatus = function (value){
     let color = changeBtn(statusGroup[value]);
-    resultNum.textContent = data;
+    resultNum.textContent = data; 
     resultMsg.textContent = statusGroup[value].msg;
     level = statusGroup[value].level;
     let msg = statusGroup[value].msg;
@@ -169,111 +169,111 @@ function BMIstatus(data) {
       msg
     }
   };
-
+ 
   if (data <= 18.5) {
-    filterStatus('thin');
+    filterStatus("thin");
   } else if (data <= 25) {
-    filterStatus('ideal');
+    filterStatus("ideal")
   } else if (data <= 30) {
-    filterStatus('heavy');
+    filterStatus("heavy");
   } else if (data <= 35) {
-    filterStatus('slightlyObese');
+    filterStatus("slightlyObese");
   } else if (data <= 40) {
-    filterStatus('mediumObese');
+    filterStatus("mediumObese");
   } else {
-    filterStatus('severeObese');
+    filterStatus("severeObese");
   }
 
 }
-
-//---------畫面 : 按鈕轉換顏色-------//
+//== 畫面：按鈕轉換顏色 ==//
 function changeBtn(input){
-  let color = input.color;
-  showResult.style.display = 'block'; //顯示
-  resultBtn.style.display = 'none';   //隱藏
-  showResult.className = '';          //將之前的按鈕顏色style設為空(之前的除錯處)
-  showResult.classList.add(color);    //再重新賦了新的按鈕顏色
 
+  let color = input.color ;
+  resultBtn.style.display = 'none';
+  showResult.style.display = 'block';
+  showResult.classList.add(color);
+  
   return color;
 }
 
-//---------互動 + 畫面 : 點擊按鈕新增狀態 + 產生畫面-------//
+//== 互動＋畫面：點擊按鈕新增狀態＋產生畫面 ==//
 function newStatus(){
   
-  if(inputVerify() === 'true'){
-    return;
+  if(inputVerify()=== "true"){
+    return ;
   };
 
   BMIcalc();
   updateData(data);
+
 }
 
-//---------互動 + 畫面 : 表單驗證-------//
+//== 互動＋畫面：表單驗證 ==//
 function inputVerify(){
-  if(inputHeight.value.trim() == '' || inputWeight.value.trim() == ''){
-    let alertMsg;
+if(inputHeight.value.trim() == "" || inputWeight.value.trim() == ""){  
+  let alertMsg ;
 
-    if(inputHeight.value.trim() == ''){
-      verifyHeight.textContent = '*請在此輸入身高 XXX cm';
-      verifyHeight.classList.add('visible');
-      inputHeight.classList.add('warning');
-      alertMsg = 'true';
+  if(inputHeight.value.trim() == ""){
+    verifyHeight.textContent = "*請在此輸入身高 XXX cm";
+    verifyHeight.classList.add("visible");
+    inputHeight.classList.add("warning");
+    alertMsg ="true";
     };
-    if(inputWeight.value.trim() == ''){
-      verifyWeight.textContent = '*請在此輸入體重 XX kg';
-      verifyWeight.classList.add('visible');
-      inputWeight.classList.add('warning');
-      alertMsg = 'true';
-    };
+  if(inputWeight.value.trim() == "" ){
+    verifyWeight.textContent = "*請在此處輸入體重 XX kg";
+    verifyWeight.classList.add("visible");
+    inputWeight.classList.add("warning");
+    alertMsg ="true";
+  } ;
 
-    return alertMsg; 
+  return alertMsg ; //無法中斷函式QQ 還是會輸入 空值到data 中
   };
 
-  verifyHeight.classList.remove('visible');
-  verifyWeight.classList.remove('visible');
-  inputHeight.classList.remove('warning');
-  inputWeight.classList.remove('warning');
+  verifyHeight.classList.remove("visible");
+  verifyWeight.classList.remove("visible");
+  inputHeight.classList.remove("warning");
+  inputWeight.classList.remove("warning");
 }
 
-//---------互動 + 畫面 : 清空表單、按鈕 or 繼續計算-------//
+//== 互動＋畫面：清空表單、按鈕 or 繼續計算 ==//
 function resetAll(){
-  if(inputVerify()==='true'){
+  if(inputVerify()=== "true"){
     resultBtn.style.display = 'block';
     showResult.style.display = 'none';
-    showResult.setAttribute('class', '');
+    showResult.setAttribute("class","");
   }else{
     newStatus();
-  }
-}
-
-//---------資料:更新 localStorage -------//
-function updateLocalStorage(data){
-  localStorage.setItem('BMI Record', JSON.stringify(data));  //轉成字串的方式存入
-}
-
-//---------ALL: 單一刪除按鈕-------//
-
-function deleteBtn(e){
-  if(!e.target.classList.contains("material-icons-outlined")){  //檢查是否含有icon
-    return;
   };
+}
 
+//== 資料：更新localStorage ==//
+function updateLocalStorage(data){
+  localStorage.setItem('BMI Record', JSON.stringify(data));
+}
+
+
+//== ALL：單一刪除按紐 ==//
+function deleteBtn(e){
+  if(!e.target.classList.contains("material-icons-outlined")){
+    return ;
+  };
   e.preventDefault();
-  const id = parseInt(e.target.closest("LI").dataset.id); //返回第一個LI的自訂屬性以整數呈現
-
+  const id = parseInt(e.target.closest("LI").dataset.id);
+  
   let deleteData = data.findIndex(item => item.time === id);
 
   data.splice(deleteData,1);
 
   updateLocalStorage(data);
   updateData(data);
+
 }
 
-//---------ALL: 全部刪除按鈕-------//
+//== ALL：全部刪除按鈕 ==//
 function deleteAllData(e){
-  e.preventDefault();
-  if(e.target.closest('.clear-all-btn').nodeName !== 'BUTTON'){
-    return; 
+  e.preventDefault();  
+  if(e.target.closest(".clear-all-btn").nodeName !== "BUTTON"){
+    return ;
   }
   const total = data.length;
   data.splice(0, total);
@@ -281,23 +281,24 @@ function deleteAllData(e){
   updateLocalStorage(data);
   updateData(data);
   resetAll();
+
 }
 
-
-//---------keyup 監聽-------//
-function inputByKey(e){
-  if(e.key === 'Enter'){
-    if(resultBtn.style.display === 'block'){
+// keyup 監聽//
+function inputByKey (e){
+  if(e.key === "Enter"){
+    if(resultBtn.style.display === "block"){
       newStatus();
     }else{
       resetAll();
     };
+    
   }else{
-    return;
+    return ;
   };
 }
 
-// 初始值
+//預設階段//
 function init(){
   updateData(data);
 
@@ -306,8 +307,6 @@ function init(){
 
   resultBtn.addEventListener('click', newStatus, false);
   resetBtn.addEventListener('click', resetAll, false);
-
-  
   list.addEventListener('click', deleteBtn, false);
   clearAllBtn.addEventListener('click', deleteAllData, false);
 }
