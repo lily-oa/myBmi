@@ -1,5 +1,6 @@
 "use strict";
 
+// localStorage.clear(); 
 var inputHeight = document.querySelector(".height-group input");
 var inputWeight = document.querySelector(".weight-group input");
 var verifyHeight = document.querySelector(".height-group p"); //input verify info
