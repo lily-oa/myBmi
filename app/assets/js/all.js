@@ -1,4 +1,4 @@
-
+// localStorage.clear(); 
 const inputHeight = document.querySelector(".height-group input");
 const inputWeight = document.querySelector(".weight-group input");
 const verifyHeight = document.querySelector(".height-group p"); //input verify info
