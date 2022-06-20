@@ -22,8 +22,7 @@ function updateData(data){
   if(data.length > 0){
     clearAllBtn.style.display = 'flex';
     data.forEach(item => {
-      const content = `
-        <li class="${item.level} d-block d-md-none ps-0 ms-0" data-id="${item.time}">
+      const content = `<li class="${item.level} d-block d-md-none ps-0 ms-0" data-id="${item.time}">
           <div class="row d-flex flex-column justify-content-between align-items-center">
             <div class="col-11 d-flex flex-row justify-content-between mb-2">
                 <h3 class="ps-1">${item.msg}</h3>
@@ -48,7 +47,6 @@ function updateData(data){
             </div>
           </div>
         </li>
-
         <li class="${item.level} d-none d-md-block" data-id="${item.time}">
           <div class="d-flex flex-md-row align-items-md-center justify-content-around">
               <h3>${item.msg}</h3>
@@ -69,9 +67,7 @@ function updateData(data){
                 <i class="material-icons-outlined"> highlight_off</i>
               </a>
             </div>
-        </li>
-        `
-        ;
+        </li>`;
         str += content;
     });  
 
@@ -286,6 +282,7 @@ function deleteAllData(e){
   updateData(data);
   resetAll();
 }
+
 
 //---------keyup 監聽-------//
 function inputByKey(e){
