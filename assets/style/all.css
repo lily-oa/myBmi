@@ -15919,6 +15919,9 @@ p {
 }
 
 .clear-all-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0 auto;
   border-radius: 14px;
   border: 0 solid #000;
