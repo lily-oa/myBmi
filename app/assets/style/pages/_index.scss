@@ -272,6 +272,7 @@ p{
 
 // 清除歷史資料的垃圾桶
 .clear-all-btn{
+  display: flex;
   margin: 0 auto;
   border-radius: 14px;
   border: 0 solid #000;
